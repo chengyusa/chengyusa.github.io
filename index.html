@@ -1,0 +1,342 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Season Blog</title>
+<link rel="shortcut icon" href="https://umatka.com/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://umatka.com/media/css/tailwind.css">
+<link rel="stylesheet" href="https://umatka.com/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Season Blog - Atom Feed" href="https://umatka.com/atom.xml">
+
+    
+
+  <meta name="description" content="温故而知新" />
+</head>
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+
+    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
+  <div class="flex justify-end px-4">
+    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
+      <i class="ri-close-line" v-show="showMenu"></i>
+      <i class="ri-menu-3-line" v-show="!showMenu"></i>
+    </div>
+  </div>
+  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
+    
+      <a href="/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        首页
+      </a>
+    
+      <a href="/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        归档
+      </a>
+    
+      <a href="/tags" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        标签
+      </a>
+    
+      <a href="/post/about" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        关于
+      </a>
+    
+    <a href="https://umatka.com/atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+      RSS
+    </a>
+  </nav>
+</div>
+
+    <div class="max-w-4xl w-full mx-auto ">
+      
+        <header class="flex py-16 md:py-32 mt-12 flex-col md:flex-row px-4 md:px-0 animated fadeIn">
+  <div class="flex-1 order-2 md:order-1 md:pr-16">
+    <div class="text-4xl font-bold text-center md:text-left">
+      Season Blog
+    </div>
+    <div class="text-xl text-gray-500 mt-4 text-center md:text-left">
+      温故而知新
+    </div>
+    
+      <div class="mt-8 text-center md:text-left">
+        <a
+          href="mailto:zcy@outlook.hu" 
+          arget="_blank"
+          class="text-sm bg-yellow-50 dark:bg-indigo-500 dark:text-gray-700 font-semibold px-4 py-2 inline-block yellow-btn transition-fast rounded"
+        >LET&#39;S TALK!</a>
+      </div>
+    
+    
+      <div class="mt-8 flex items-center">
+        
+          <div class="text-gray-500 mr-2">
+            Follow me 👉
+          </div>
+        
+        
+          
+        
+          
+            
+              <a href="mailto:zcy@outlook.hu" target="_blank" class="mr-2 w-8 h-8 inline-flex items-center justify-center text-xl hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast">
+                <i class="ri-mail-line"></i>
+              </a>
+            
+          
+        
+          
+            
+              <a href="https://github.com/chengyusa" target="_blank" class="mr-2 w-8 h-8 inline-flex items-center justify-center text-xl hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast">
+                <i class="ri-github-line"></i>
+              </a>
+            
+          
+        
+          
+            
+              <a href="https://twitter.com/zcyhk" target="_blank" class="mr-2 w-8 h-8 inline-flex items-center justify-center text-xl hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast">
+                <i class="ri-twitter-line"></i>
+              </a>
+            
+          
+        
+          
+        
+          
+        
+          
+            
+              <a href="https://www.facebook.com/002hk/" target="_blank" class="mr-2 w-8 h-8 inline-flex items-center justify-center text-xl hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast">
+                <i class="ri-facebook-line"></i>
+              </a>
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    
+  </div>
+  <div class="md:mx-8 flex-shrink-0 self-start rounded-full border-4 border-dotted border-transparent hover:border-yellow-50 p-2 w-32 h-32 order-1 md:order-2 mx-auto s3-dotted">
+    <img class="rounded-full object-cover" src="https://umatka.com/images/avatar.png?v=1718700611197" alt="Season Blog" width="100%" height="100%">
+  </div>
+</header>
+      
+
+      <div class="shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
+        
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://umatka.com/post/ren-yi-bei-zi-zui-chong-yao-de-dao-di-shi-shi-me/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          人一辈子，最重要的到底是什么？
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2024-06-18</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        三岁那年，我紧握着手中的棒棒糖，坚定的认为那最重要。
+五岁那年，我花了整整一个下午，逮住那只蜻蜓，那一刻，它好像是最重要的。
+七岁那年，我看着同桌手中的奖状，带着羡慕和一点点嫉妒，觉得那也许是最重要的。
+九岁那年，仰躺在树荫下，阳光斑驳的洒...
+      </div>
+      <a href="https://umatka.com/post/ren-yi-bei-zi-zui-chong-yao-de-dao-di-shi-shi-me/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://umatka.com/post/outlook-mail/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          申请outlook2-3位字符/数字超短邮箱
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2024-05-14</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <p>在2013年4月的时候，微软 Outlook.com 一口气推出了 32 个国际域名 Outlook.com 邮箱地址注册。很多后缀还是可以申请到2-3位的字符或者数字的邮箱的流程我们以it域名为例输入申请地址https://signup.live.com/signup.aspx?mkt=it-it&amp;lic=1 选择第二个选项，输入你喜欢的前缀,会验证是否可用，然后提示输入密码，最后输入姓名，搞定了，一个2位的outlook邮箱到手！</p>
+
+      </div>
+      <a href="https://umatka.com/post/outlook-mail/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://umatka.com/post/shen-qing-outlook2-3-wei-zi-fu-shu-zi-chao-duan-you-xiang/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          HTML+JS+CSS 实现随机跳转到一个网址
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2024-05-14</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        &lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&q...
+      </div>
+      <a href="https://umatka.com/post/shen-qing-outlook2-3-wei-zi-fu-shu-zi-chao-duan-you-xiang/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://umatka.com/post/fa-jue-shu-zi-yi-chan-avexasiacom-yu-ming-de-qian-zai-jie-zhi-yu-chu-shou-yuan-jing/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          发掘数字遗产：avexasia.com域名的潜在价值与出售愿景
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2024-05-10</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        在深入探索互联网的无尽宝藏之际，我偶然在一个知名的域名交易平台上发掘了一项宝贵的资产——avexasia.com。这一域名注册于1998年，正值互联网商业化的初期阶段，它不仅承载着网络发展的历史见证，更蕴含了巨大的潜在经济价值。更为引人注目...
+      </div>
+      <a href="https://umatka.com/post/fa-jue-shu-zi-yi-chan-avexasiacom-yu-ming-de-qian-zai-jie-zhi-yu-chu-shou-yuan-jing/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://umatka.com/post-images/fa-jue-shu-zi-yi-chan-avexasiacom-yu-ming-de-qian-zai-jie-zhi-yu-chu-shou-yuan-jing.jpg" alt="发掘数字遗产：avexasia.com域名的潜在价值与出售愿景">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://umatka.com/post/5/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          也许胖猫没有错，只是时代变了
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2024-05-08</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        今天看了个新闻。
+新闻中的男主角叫胖猫，21岁。王者荣耀国服梦琪，职业代打。
+女主叫谭竹，27岁。
+事情的起因是他们一起打王者，从认识，再到网恋。
+胖猫很深情、很喜欢女主谭竹，但可惜女生在一直pua男生。
+胖猫为了她来到重庆睡在一个破出租屋...
+      </div>
+      <a href="https://umatka.com/post/5/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://umatka.com/post/4/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          时光深处的桥
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2024-05-08</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        有时候，我会在梦中回到那座桥。它静卧在小镇的心脏地带，用石头和岁月垒砌起来的身躯，承载着无数往来匆匆的脚步声。那座桥是我童年的坐标，也是记忆的渡口，连接着过去与现在，时间与空间。
+小镇的变化不算太大，但足以让一个长时间离开的人感到陌生。每次...
+      </div>
+      <a href="https://umatka.com/post/4/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://umatka.com/post/3/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          时光的细语
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2024-05-07</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        在这个喧嚣的世界里，时间以一种悄无声息的方式流逝。它不似春日里的花开，轰轰烈烈，也不似秋日里的落叶，一片片铺满整个寂静的小路。时间的流逝更像是晨曦中微光的逐渐褪去，或是夜幕下星光的缓慢闪烁，总是在不经意间完成它的使命。
+我常常在想，如果时间...
+      </div>
+      <a href="https://umatka.com/post/3/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://umatka.com/post/2/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          情感学视角下的爱情与金钱：相互影响与共存
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2024-05-05</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        从情感学的角度来看，爱情和金钱之间的关系是相互影响和共存的。爱情是人类最基本的情感需求之一，而金钱则是现代社会中不可或缺的经济基础。因此，在现实生活中，爱情和金钱往往会交织在一起，相互影响。
+一、爱情与金钱的相互影响
+1. 金钱对爱情的影响...
+      </div>
+      <a href="https://umatka.com/post/2/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://umatka.com/post/1/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          爱情，那抹不褪色的暖
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2024-05-04</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        爱情，这个自古以来被无数诗人歌颂、作家笔下描绘的主题，它如同春天里盛开的百花，各有各的色彩，各有各的香气。我一直在思考，爱情究竟是怎样的存在？它是否像那些悲伤的情歌中唱到的，是甜蜜与痛苦的交织？还是像古老的传说中描述的，是命运之神手中的一根...
+      </div>
+      <a href="https://umatka.com/post/1/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+  </div>
+  
+      </div>
+
+      
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  <a class="gov-icon" target="_blank" href="https://beian.miit.gov.cn/" title="ICP/IP地址/域名信息备案管理系统">京ICP备11002345号-6 </a> & 本博客已加入<a href="https://www.blogsclub.ru/" target="_blank"title="博客聚合俱乐部">BlogsClub</a>
+</footer>
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://umatka.com/media/scripts/main.js"></script>
+</body>
+
+</html>
